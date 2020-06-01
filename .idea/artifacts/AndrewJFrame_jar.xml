@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="AndrewJFrame:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AndrewJFrame_jar</output-path>
+    <root id="root">
+      <element id="archive" name="AndrewJFrame.jar">
+        <element id="module-output" name="AndrewJFrame" />
+      </element>
+      <element id="library" level="module" name="tyrus-standalone-client-1.12.jar" module-name="AndrewJFrame" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/gson-2.8.6.jar" />
+      <element id="library" level="module" name="gson-2.8.6.jar" module-name="AndrewJFrame" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/tyrus-standalone-client-1.12.jar" />
+    </root>
+  </artifact>
+</component>

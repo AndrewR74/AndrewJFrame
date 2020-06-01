@@ -1,0 +1,3 @@
+Printer: OneNote for Windows 10
+Salt: k5jGF
+Hash: 9f3e94fb50c3c479a38c9ace8f0c97ed9b7b67af6f42cca3c3bc31a28777a801
