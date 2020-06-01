@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="191fde07-3b61-439a-a638-d6dae7e768c5" name="Default Changelist" comment="" />
+    <list default="true" id="191fde07-3b61-439a-a638-d6dae7e768c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_imaging_1_0_alpha1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/commons_imaging_1_0_alpha1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_8_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/ij_1_53a.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/tyrus_standalone_client_1_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/600lt.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/AndrewJFrame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AndrewJFrame/AndrewJFrame.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/DrawExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/MainForm$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/MainForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/PrinterApp$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/PrinterApp$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/PrinterApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/ProxyClient$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/ProxyClient$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/ProxyClient$3$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/ProxyClient$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/ProxyClient$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/ProxyClient$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/ProxyClient$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/ProxyClient$7$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/ProxyClient$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/ProxyClient$8$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/ProxyClient$8$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/ProxyClient$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrewJFrame/bin/ProxyClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AndrewJFrame_jar/gson-2.8.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AndrewJFrame_jar/tyrus-standalone-client-1.12.jar" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,14 +47,19 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1cgG1QEhK5KEoYQUVBzCagZW6en" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/commons-imaging-1.0-alpha1-bin/commons-imaging-1.0-alpha1.jar!/" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/tyrus-standalone-client-1.12.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2724595" />
@@ -88,10 +123,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="459" y="105" width="816" height="679" key="#Project_Structure" timestamp="1590987909581">
+    <state x="459" y="105" width="816" height="679" key="#Project_Structure" timestamp="1591053556186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="459" y="105" width="816" height="679" key="#Project_Structure/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590987909581" />
+    <state x="459" y="105" width="816" height="679" key="#Project_Structure/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591053556186" />
     <state x="519" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590943514023">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -108,30 +143,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="399" height="466" key="DebuggerActiveHint/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590988264267" />
-    <state x="625" y="134" width="588" height="588" key="FileChooserDialogImpl" timestamp="1590987907412">
+    <state x="835" y="115" width="588" height="588" key="FileChooserDialogImpl" timestamp="1591053553685">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="625" y="134" width="588" height="588" key="FileChooserDialogImpl/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590987907412" />
-    <state width="1877" height="151" key="GridCell.Tab.0.bottom" timestamp="1591048006466">
+    <state x="835" y="115" width="588" height="588" key="FileChooserDialogImpl/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591053553685" />
+    <state width="1877" height="151" key="GridCell.Tab.0.bottom" timestamp="1591053569267">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="213" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591039056646" />
-    <state width="1877" height="151" key="GridCell.Tab.0.bottom/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591048006466" />
-    <state width="1877" height="151" key="GridCell.Tab.0.center" timestamp="1591048006466">
+    <state width="1877" height="151" key="GridCell.Tab.0.bottom/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591053569267" />
+    <state width="1877" height="151" key="GridCell.Tab.0.center" timestamp="1591053569267">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="213" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591039056646" />
-    <state width="1877" height="151" key="GridCell.Tab.0.center/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591048006466" />
-    <state width="1877" height="151" key="GridCell.Tab.0.left" timestamp="1591048006466">
+    <state width="1877" height="151" key="GridCell.Tab.0.center/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591053569267" />
+    <state width="1877" height="151" key="GridCell.Tab.0.left" timestamp="1591053569267">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="213" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591039056646" />
-    <state width="1877" height="151" key="GridCell.Tab.0.left/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591048006466" />
-    <state width="1877" height="151" key="GridCell.Tab.0.right" timestamp="1591048006466">
+    <state width="1877" height="151" key="GridCell.Tab.0.left/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591053569267" />
+    <state width="1877" height="151" key="GridCell.Tab.0.right" timestamp="1591053569267">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="213" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591039056646" />
-    <state width="1877" height="151" key="GridCell.Tab.0.right/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591048006466" />
+    <state width="1877" height="151" key="GridCell.Tab.0.right/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591053569267" />
     <state width="1877" height="216" key="GridCell.Tab.1.bottom" timestamp="1590989508348">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -51,9 +51,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="gson-2.8.6" level="project" />
-    <orderEntry type="library" name="tyrus-standalone-client-1.12" level="project" />
-    <orderEntry type="library" name="ij-1.53a" level="project" />
     <orderEntry type="library" name="commons-imaging-1.0-alpha1" level="project" />
   </component>
 </module>
