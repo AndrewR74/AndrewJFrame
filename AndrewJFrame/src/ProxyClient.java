@@ -43,11 +43,18 @@ public class ProxyClient
 {	 
 	private String printerName;
 	private PrinterApp context;
+	private double ml, mr, mt, mb, w, h;
 	
-	public ProxyClient(String printerName, PrinterApp context)
+	public ProxyClient(String printerName, PrinterApp context, double ml, double mr, double mt, double mb, double w, double h)
 	{
 		this.printerName = printerName;
 		this.context = context;
+		this.ml = ml;
+		this.mr = mr;
+		this.mt = mt;
+		this.mb = mb;
+		this.w = w;
+		this.h = h;
 	}
 	
     @OnOpen
@@ -174,17 +181,18 @@ public class ProxyClient
 					PageFormat pf = printJob.defaultPage();
 					Paper paper = pf.getPaper();
 
-					double width = 8.5d * 72d;
-					double height = 11d * 72d;
-					double margin = 1d * 72d;
+					double width = w * 72d;
+					double height = h * 72d;
+					//double margin = 1d * 72d;
+
 
 
 					paper.setSize(width, height);
 					paper.setImageableArea(
-							margin,
-							margin,
-							width - (margin * 2),
-							height - (margin * 2));
+							ml * 72d,
+							mt * 72d,
+							width - (mr * 72d) - (ml * 72d),
+							height - (mb * 72d) - (mt * 72d));
 
 					pf.setOrientation(PageFormat.PORTRAIT);
 					pf.setPaper(paper);

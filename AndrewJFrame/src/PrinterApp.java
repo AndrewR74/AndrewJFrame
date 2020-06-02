@@ -23,10 +23,10 @@ public class PrinterApp extends JFrame
 	private ProxyClient pc;
 	public String salt;
 	public String hash;
+	private JTextField txtMl, txtMr, txtMt, txtMb, txtWidth, txtHeight;
 	
 	public PrinterApp()
 	{
-		new MainForm();
 
 		setSize(800,400);
 		setTitle("Swiftium Printer Proxy");
@@ -64,7 +64,14 @@ public class PrinterApp extends JFrame
 					ClientManager client = ClientManager.createClient();
 
 					try {
-						pc = new ProxyClient((String) dropdown.getSelectedItem(), context);
+						pc = new ProxyClient((String) dropdown.getSelectedItem(), context,
+								Double.parseDouble(txtMl.getText()),
+								Double.parseDouble(txtMr.getText()),
+								Double.parseDouble(txtMt.getText()),
+								Double.parseDouble(txtMb.getText()),
+								Double.parseDouble(txtWidth.getText()),
+								Double.parseDouble(txtHeight.getText())
+						);
 						client.connectToServer(pc, new URI("wss://swiftium.co:1000/PrintRelay"));
 
 					} catch (Exception e) {
@@ -175,6 +182,13 @@ public class PrinterApp extends JFrame
 		// use one listener to handle all buttons
 		textArea = new JTextArea(21,37);
 		button = new JButton("Start");
+		txtMb = new JTextField();
+		txtWidth = new JTextField();
+		txtMt = new JTextField();
+		txtMr = new JTextField();
+		txtMl = new JTextField();
+		txtHeight = new JTextField();
+
 		button.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
@@ -187,12 +201,12 @@ public class PrinterApp extends JFrame
 		
 		window.add(button);
 		Dimension size = button.getPreferredSize();
-		button.setBounds((365/2) - (130 / 2), 105 + insets.top,
+		button.setBounds((365/2) - (130 / 2), 220 + insets.top,
 	             130, size.height);
 		//3
 		window.add(label);
 		size = label.getPreferredSize();
-		label.setBounds((365/2) - (150 / 2), 200 + insets.top,
+		label.setBounds((365/2) - (150 / 2), 300 + insets.top,
 	             150, size.height);
 		
 		window.add(dropdown);
@@ -204,5 +218,48 @@ public class PrinterApp extends JFrame
 		size = textArea.getPreferredSize();
 		textArea.setBounds((350), 13 + insets.top,
 	             size.width, size.height);
+
+		JTextField[] ps = new JTextField[]
+				{
+						txtMl, txtMr, txtMb, txtMt, txtHeight, txtWidth
+				};
+		String[] labels = new String[]
+				{
+					"Margin Left", "Margin Right", "Margin Bottom", "Margin Top", "Page Height", "Page Width"
+
+				};
+		Double[] iValues = new Double[]
+				{
+					0.5d, 0.5d, 0.5d, 0.5d, 11.0d, 8.5d
+				};
+
+		int i = 0;
+		for(JTextField t : ps) {
+			JLabel lbl = new JLabel(labels[i]);
+			window.add(lbl);
+			size = lbl.getPreferredSize();
+			lbl.setBounds(75, 60 + (i * 25) + insets.top,
+					size.width, size.height);
+
+			window.add(t);
+			size = t.getPreferredSize();
+			t.setBounds((365 / 2) - (35 / 2), 60 + (i * 25) + insets.top,
+					35, size.height);
+			t.setText(iValues[i].toString());
+
+			lbl = new JLabel("inches");
+			window.add(lbl);
+			size = lbl.getPreferredSize();
+			lbl.setBounds(((365 / 2) - (35 / 2)) + 40, 60 + (i++ * 25) + insets.top,
+					size.width, size.height);
+
+
+		}
+
+	}
+
+	private void updateMargins()
+	{
+
 	}
 }

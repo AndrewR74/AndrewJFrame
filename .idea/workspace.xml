@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="191fde07-3b61-439a-a638-d6dae7e768c5" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
@@ -37,9 +55,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="AndrewJFrame" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -57,16 +72,18 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/tyrus-standalone-client-1.12.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2724595" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager" selected="Application.PrinterApp">
-    <configuration name="PrinterApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="PrinterApp" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-14" />
       <option name="MAIN_CLASS_NAME" value="PrinterApp" />
       <module name="AndrewJFrame" />
       <method v="2">
@@ -75,8 +92,7 @@
     </configuration>
     <configuration name="PrinterProxy" type="JarApplication">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/AndrewJFrame_jar/AndrewJFrame.jar" />
-      <option name="WORKING_DIRECTORY" value="C:\Users\PCUser\Desktop\AndrewJFrame" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Anthony1\Documents\GitHub\AndrewJFrame" />
       <option name="ALTERNATIVE_JRE_PATH" value="13" />
       <module name="AndrewJFrame" />
       <method v="2" />
@@ -88,26 +104,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JAR Application.PrinterProxy" />
       <item itemvalue="Application.PrinterApp" />
+      <item itemvalue="JAR Application.PrinterProxy" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.PrinterApp" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -122,14 +121,31 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="459" y="105" width="816" height="679" key="#Project_Structure" timestamp="1591053556186">
+    <state x="845" y="383" key="#Notifications" timestamp="1591056841635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="845" y="383" key="#Notifications/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591056841635" />
+    <state x="459" y="105" width="816" height="679" key="#Project_Structure" timestamp="1591054039427">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="459" y="105" key="#Project_Structure/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591054039427" />
     <state x="459" y="105" width="816" height="679" key="#Project_Structure/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591053556186" />
-    <state x="519" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590943514023">
+    <state x="519" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591054106203">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="519" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591054106203" />
     <state x="519" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590943514023" />
     <state x="765" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1591047791797">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -143,28 +159,33 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="399" height="466" key="DebuggerActiveHint/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590988264267" />
-    <state x="835" y="115" width="588" height="588" key="FileChooserDialogImpl" timestamp="1591053553685">
+    <state x="835" y="115" width="588" height="588" key="FileChooserDialogImpl" timestamp="1591053953220">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="835" y="115" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591053953220" />
     <state x="835" y="115" width="588" height="588" key="FileChooserDialogImpl/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591053553685" />
-    <state width="1877" height="151" key="GridCell.Tab.0.bottom" timestamp="1591053569267">
+    <state width="1877" height="231" key="GridCell.Tab.0.bottom" timestamp="1591057349188">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="231" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591057349188" />
     <state width="1877" height="213" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591039056646" />
     <state width="1877" height="151" key="GridCell.Tab.0.bottom/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591053569267" />
-    <state width="1877" height="151" key="GridCell.Tab.0.center" timestamp="1591053569267">
+    <state width="1877" height="231" key="GridCell.Tab.0.center" timestamp="1591057349188">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="231" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591057349188" />
     <state width="1877" height="213" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591039056646" />
     <state width="1877" height="151" key="GridCell.Tab.0.center/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591053569267" />
-    <state width="1877" height="151" key="GridCell.Tab.0.left" timestamp="1591053569267">
+    <state width="1877" height="231" key="GridCell.Tab.0.left" timestamp="1591057349188">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="231" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591057349188" />
     <state width="1877" height="213" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591039056646" />
     <state width="1877" height="151" key="GridCell.Tab.0.left/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591053569267" />
-    <state width="1877" height="151" key="GridCell.Tab.0.right" timestamp="1591053569267">
+    <state width="1877" height="231" key="GridCell.Tab.0.right" timestamp="1591057349188">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="231" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591057349188" />
     <state width="1877" height="213" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591039056646" />
     <state width="1877" height="151" key="GridCell.Tab.0.right/1920.77.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591053569267" />
     <state width="1877" height="216" key="GridCell.Tab.1.bottom" timestamp="1590989508348">

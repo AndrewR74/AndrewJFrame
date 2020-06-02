@@ -11,6 +11,7 @@ public class MainForm {
     private JButton button1;
     private JComboBox comboBox1;
     private JPanel panalMain;
+    private JTextField textField1;
 
     public MainForm() {
 
