@@ -129,6 +129,30 @@ public class PrinterApp extends JFrame
 		    				{
 		    					hash = parts[1];
 		    				}
+							else if(parts[0].equals("Margin Left"))
+							{
+								txtMl.setText(parts[1]);
+							}
+							else if(parts[0].equals("Margin Right"))
+							{
+								txtMr.setText(parts[1]);
+							}
+							else if(parts[0].equals("Margin Bottom"))
+							{
+								txtMb.setText(parts[1]);
+							}
+							else if(parts[0].equals("Margin Top"))
+							{
+								txtMt.setText(parts[1]);
+							}
+							else if(parts[0].equals("Page Width"))
+							{
+								txtWidth.setText(parts[1]);
+							}
+							else if(parts[0].equals("Page Height"))
+							{
+								txtHeight.setText(parts[1]);
+							}
 		    			}
 		    		}
 		    	}
@@ -145,7 +169,14 @@ public class PrinterApp extends JFrame
 		String content = 
 				"Printer: " + dropdown.getSelectedItem() + 
 				"\r\nSalt: " + (salt==null?"":salt) +
-				"\r\nHash: " + (hash==null?"":hash);
+				"\r\nHash: " + (hash==null?"":hash) +
+				"\r\nMargin Left: " + txtMl.getText() +
+				"\r\nMargin Right: " + txtMr.getText() +
+				"\r\nMargin Bottom: " + txtMb.getText() +
+				"\r\nMargin Top: " + txtMt.getText() +
+				"\r\nPage Height: " + txtHeight.getText() +
+				"\r\nPage Width: " + txtWidth.getText()
+				;
 		String path = "settings.txt";
 		try {
 			Files.write(Paths.get(path), content.getBytes());
