@@ -1,4 +1,4 @@
-Manifest-Version: 1.0
+Manifest-Version: 2.0
 Main-Class: PrinterApp
 Class-Path: gson-2.8.6.jar tyrus-standalone-client-1.12.jar
 

@@ -15,9 +15,13 @@ import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Random;
+import java.util.jar.Attributes;
+import java.util.jar.Manifest;
 
 public class PrinterApp extends JFrame {
 	public JButton button;
@@ -33,11 +37,13 @@ public class PrinterApp extends JFrame {
 	private Session session;
 	public int totalPrinted = 0;
 	private JLabel printedLabel;
+	private String appVersion = "2.0";
 
 	public PrinterApp() {
 
+
 		setSize(800, 400);
-		setTitle("Swiftium Printer Proxy");
+		setTitle("Swiftium Printer Proxy v" + appVersion);
 		createGUI();
 		setVisible(true);
 		//salt = getSaltString(5);
