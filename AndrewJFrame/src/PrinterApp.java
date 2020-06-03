@@ -412,11 +412,5 @@ public class PrinterApp extends JFrame {
 
 
 		}
-
-	}
-
-	private void updateMargins()
-	{
-
 	}
 }
