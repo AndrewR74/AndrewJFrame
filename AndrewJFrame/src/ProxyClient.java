@@ -41,9 +41,9 @@ import com.google.gson.reflect.TypeToken;
 @ClientEndpoint
 public class ProxyClient
 {	 
-	private String printerName;
+	public String printerName;
 	private PrinterApp context;
-	private double ml, mr, mt, mb, w, h;
+	public double ml, mr, mt, mb, w, h;
 	
 	public ProxyClient(String printerName, PrinterApp context, double ml, double mr, double mt, double mb, double w, double h)
 	{
@@ -63,7 +63,7 @@ public class ProxyClient
     {
     	SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
-				context.button.setText("Connected");
+				context.button.setText("Disconnect");
 			}
 		});
     	System.out.println("Connected: " + this.printerName);
@@ -77,7 +77,6 @@ public class ProxyClient
         	}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
     }
 
@@ -238,10 +237,10 @@ public class ProxyClient
 							//int x = (int)Math.round((pageFormat.getImageableWidth() - img.getWidth()) / 2f);
 							//int y = (int)Math.round((pageFormat.getImageableHeight() - img.getHeight()) / 2f);
 
-							g.setColor(Color.BLACK);
+							//g.setColor(Color.BLACK);
 
 							g.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
-							g.draw(new Rectangle2D.Double(0, 0, pageFormat.getImageableWidth() - 1, pageFormat.getImageableHeight() - 1));
+							//g.draw(new Rectangle2D.Double(0, 0, pageFormat.getImageableWidth() - 1, pageFormat.getImageableHeight() - 1));
 							g.drawImage(img, 0, 0, (img.getWidth() / imgInfo.getPhysicalWidthDpi()) * 72, (img.getHeight() / imgInfo.getPhysicalHeightDpi()) * 72, 0, 0, img.getWidth(), img.getHeight(), null);
 							return PAGE_EXISTS;
 						}
@@ -249,6 +248,7 @@ public class ProxyClient
 					printJob.print();
 					SwingUtilities.invokeLater(new Runnable() {
 						public void run() {
+							context.incPrintedTotal();
 							context.textArea.setText("Printed [" + sourceId + "]" + "\n\n" + context.textArea.getText());
 						}
 					});

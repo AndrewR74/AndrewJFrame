@@ -2,7 +2,14 @@
 import javax.print.PrintService;
 import javax.print.PrintServiceLookup;
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.websocket.CloseReason;
+import javax.websocket.Session;
+
 import org.glassfish.tyrus.client.ClientManager;
+import org.glassfish.tyrus.client.ClientProperties;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
@@ -12,8 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Random;
 
-public class PrinterApp extends JFrame
-{
+public class PrinterApp extends JFrame {
 	public JButton button;
 	public JLabel label;
 	private JComboBox<String> dropdown;
@@ -24,44 +30,64 @@ public class PrinterApp extends JFrame
 	public String salt;
 	public String hash;
 	private JTextField txtMl, txtMr, txtMt, txtMb, txtWidth, txtHeight;
-	
-	public PrinterApp()
-	{
+	private Session session;
+	public int totalPrinted = 0;
+	private JLabel printedLabel;
 
-		setSize(800,400);
+	public PrinterApp() {
+
+		setSize(800, 400);
 		setTitle("Swiftium Printer Proxy");
 		createGUI();
 		setVisible(true);
 		//salt = getSaltString(5);
-		
+
 
 		loadSettings();
-		label.setText(salt==null? "Pending...": "Access Code: " + salt);
+		printedLabel.setText("Total Printed: " + totalPrinted);
+		label.setText(salt == null ? "Pending..." : "Access Code: " + salt);
 	}
-	
-	public static void main(String[] args)
-	{
-		try
-		{
+
+	public static void main(String[] args) {
+		try {
 			File newDirectory = new File("Cache");
 
-			if(!newDirectory.exists())
+			if (!newDirectory.exists())
 				newDirectory.mkdir();
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 
 		}
 
 		context = new PrinterApp();
 	}
-	
+
+	private void updateProxy()
+	{
+		try {
+			if(pc != null) {
+				pc.printerName = (String) dropdown.getSelectedItem();
+				pc.ml = Double.parseDouble(txtMl.getText());
+				pc.mr = Double.parseDouble(txtMr.getText());
+				pc.mt = Double.parseDouble(txtMt.getText());
+				pc.mb = Double.parseDouble(txtMb.getText());
+				pc.w = Double.parseDouble(txtWidth.getText());
+				pc.h = Double.parseDouble(txtHeight.getText());
+				saveSettings();
+			}
+		}
+		catch(Exception e)
+		{
+			textArea.setText("One or more of the values entered is incorrect" + "\n\n" + textArea.getText());
+		}
+	}
+
 	private void startProxy() {
 		if (!isRunning) {
 			isRunning = true;
 			Runnable myRunnable = new Runnable() {
 				public void run() {
 					ClientManager client = ClientManager.createClient();
+
 
 					try {
 						pc = new ProxyClient((String) dropdown.getSelectedItem(), context,
@@ -72,7 +98,48 @@ public class PrinterApp extends JFrame
 								Double.parseDouble(txtWidth.getText()),
 								Double.parseDouble(txtHeight.getText())
 						);
-						client.connectToServer(pc, new URI("wss://swiftium.co:1000/PrintRelay"));
+
+						ClientManager.ReconnectHandler reconnectHandler = new ClientManager.ReconnectHandler() {
+
+							private int counter = 0;
+
+							@Override
+							public boolean onDisconnect(CloseReason closeReason) {
+								if(closeReason.getCloseCode() == CloseReason.CloseCodes.NORMAL_CLOSURE) {
+									isRunning = false;
+									SwingUtilities.invokeLater(new Runnable() {
+										public void run() {
+											button.setText("Connect");
+										}
+									});
+									return false;
+								}
+								try {
+									Thread.sleep(5000);
+								} catch (InterruptedException e) {
+								}
+								return true;
+							}
+
+							@Override
+							public boolean onConnectFailure(Exception exception) {
+								try {
+									Thread.sleep(5000);
+								} catch (InterruptedException e) {
+								}
+								return true;
+							}
+
+							@Override
+							public long getDelay() {
+								return 2;
+							}
+						};
+
+						client.getProperties().put(ClientProperties.RECONNECT_HANDLER, reconnectHandler);
+						session = client.connectToServer(pc, new URI("wss://swiftium.co:1000/PrintRelay"));
+
+
 
 					} catch (Exception e) {
 
@@ -84,6 +151,14 @@ public class PrinterApp extends JFrame
 			};
 			Thread thread = new Thread(myRunnable);
 			thread.start();
+		}
+		else
+		{
+			try {
+				button.setText("Disconnecting");
+				session.close(new CloseReason(CloseReason.CloseCodes.NORMAL_CLOSURE,"User close"));
+			} catch (IOException e) {
+			}
 		}
 	}
 	
@@ -153,6 +228,16 @@ public class PrinterApp extends JFrame
 							{
 								txtHeight.setText(parts[1]);
 							}
+							else if(parts[0].equals("Total Printed"))
+							{
+								try {
+									totalPrinted = (Integer.parseInt(parts[1]));
+								}
+								catch(Exception e)
+								{
+
+								}
+							}
 		    			}
 		    		}
 		    	}
@@ -175,7 +260,8 @@ public class PrinterApp extends JFrame
 				"\r\nMargin Bottom: " + txtMb.getText() +
 				"\r\nMargin Top: " + txtMt.getText() +
 				"\r\nPage Height: " + txtHeight.getText() +
-				"\r\nPage Width: " + txtWidth.getText()
+				"\r\nPage Width: " + txtWidth.getText() +
+				"\r\nTotal Printed: " + totalPrinted
 				;
 		String path = "settings.txt";
 		try {
@@ -197,6 +283,14 @@ public class PrinterApp extends JFrame
         for (PrintService printer : printServices)
         	dropdown.addItem(printer.getName());
 	}
+
+	public void incPrintedTotal()
+	{
+		this.totalPrinted++;
+		this.printedLabel.setText("Total Printed: " + totalPrinted);
+		saveSettings();
+
+	}
 	
 	private void createGUI()
 	{
@@ -209,6 +303,8 @@ public class PrinterApp extends JFrame
 		
 		label = new JLabel("A");
 		label.setFont(new Font("Arial", Font.BOLD, 15));
+		printedLabel = new JLabel("Total Printed: 00000");
+		printedLabel.setFont(new Font("Arial", Font.PLAIN, 12));
 		
 		// use one listener to handle all buttons
 		textArea = new JTextArea(21,37);
@@ -229,6 +325,13 @@ public class PrinterApp extends JFrame
 				saveSettings();
 			}
 		});
+
+		dropdown.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				updateProxy();
+			}
+		});
 		
 		window.add(button);
 		Dimension size = button.getPreferredSize();
@@ -237,8 +340,13 @@ public class PrinterApp extends JFrame
 		//3
 		window.add(label);
 		size = label.getPreferredSize();
-		label.setBounds((365/2) - (150 / 2), 300 + insets.top,
+		label.setBounds((365/2) - (150 / 2), 280 + insets.top,
 	             150, size.height);
+
+		window.add(printedLabel);
+		size = printedLabel.getPreferredSize();
+		printedLabel.setBounds((365/2) - (size.width / 2), 320 + insets.top,
+				size.width, size.height);
 		
 		window.add(dropdown);
 		size = dropdown.getPreferredSize();
@@ -266,6 +374,24 @@ public class PrinterApp extends JFrame
 
 		int i = 0;
 		for(JTextField t : ps) {
+
+			t.getDocument().addDocumentListener(new DocumentListener() {
+				@Override
+				public void insertUpdate(DocumentEvent e) {
+					updateProxy();
+				}
+
+				@Override
+				public void removeUpdate(DocumentEvent e) {
+					updateProxy();
+				}
+
+				@Override
+				public void changedUpdate(DocumentEvent e) {
+					updateProxy();
+				}
+			});
+
 			JLabel lbl = new JLabel(labels[i]);
 			window.add(lbl);
 			size = lbl.getPreferredSize();
