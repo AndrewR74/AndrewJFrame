@@ -168,22 +168,6 @@ public class PrinterApp extends JFrame {
 		}
 	}
 	
-	
-	public static String getSaltString(int len)
-	{
-        String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-        StringBuilder salt = new StringBuilder();
-        Random rnd = new Random();
-        while (salt.length() < len)
-        { // length of the random string.
-            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
-            salt.append(SALTCHARS.charAt(index));
-        }
-        String saltStr = salt.toString();
-        return saltStr;
-
-    }
-	
 	private void loadSettings()
 	{
 		    String data = ""; 
@@ -308,9 +292,9 @@ public class PrinterApp extends JFrame {
 		createDropdown();
 		
 		label = new JLabel("A");
-		label.setFont(new Font("Arial", Font.BOLD, 15));
+		label.setFont(new Font("Consolas", Font.BOLD, 15));
 		printedLabel = new JLabel("Total Printed: 00000");
-		printedLabel.setFont(new Font("Arial", Font.PLAIN, 12));
+		printedLabel.setFont(new Font("Consolas", Font.PLAIN, 12));
 		
 		// use one listener to handle all buttons
 		textArea = new JTextArea(21,37);
