@@ -1,3 +1,10 @@
-Printer: OneNote for Windows 10
-Salt: k5jGF
-Hash: 9f3e94fb50c3c479a38c9ace8f0c97ed9b7b67af6f42cca3c3bc31a28777a801
+Printer: Microsoft Print to PDF
+Salt: QY7kP
+Hash: fc5dd775b84c791e8da3a7801460ce507caf0ff03d62b80b042fa266e19c12cf
+Margin Left: 0.5
+Margin Right: 0.5
+Margin Bottom: 0.5
+Margin Top: 0.5
+Page Height: 11.0
+Page Width: 8.5
+Total Printed: 0
