@@ -292,7 +292,7 @@ public class PrinterApp extends JFrame {
 		createDropdown();
 		
 		label = new JLabel("A");
-		label.setFont(new Font("Consolas", Font.BOLD, 15));
+		label.setFont(new Font("Consolas", Font.BOLD, 17));
 		printedLabel = new JLabel("Total Printed: 00000");
 		printedLabel.setFont(new Font("Consolas", Font.PLAIN, 12));
 		
@@ -330,8 +330,8 @@ public class PrinterApp extends JFrame {
 		//3
 		window.add(label);
 		size = label.getPreferredSize();
-		label.setBounds((365/2) - (150 / 2), 280 + insets.top,
-	             150, size.height);
+		label.setBounds((365/2) - (180 / 2), 280 + insets.top,
+	             180, size.height);
 
 		window.add(printedLabel);
 		size = printedLabel.getPreferredSize();
